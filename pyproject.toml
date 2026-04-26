@@ -19,6 +19,7 @@ dependencies = [
     "tqdm>=4.64",
     "matplotlib>=3.6",
     "seaborn>=0.12",
+    "tensorflow-io-gcs-filesystem==0.31.0; sys_platform == 'win32'",
 ]
 
 [project.optional-dependencies]
