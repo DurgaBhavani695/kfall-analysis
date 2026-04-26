@@ -119,7 +119,6 @@ kfall-analysis/
 │       ├── Train/              # metrics.csv, conf_mat.png, pr_curve.png, roc_curve.png
 │       └── Test/
 │
-├── requirements.txt
 ├── setup.py
 ├── .gitignore
 └── README.md
@@ -136,23 +135,19 @@ git clone https://github.com/yourusername/kfall-analysis.git
 cd kfall-analysis
 ```
 
-### 2 — Create a virtual environment
+### 2 — Setup environment and dependencies
+
+We recommend using [uv](https://github.com/astral-sh/uv) for lightning-fast setup. `uv` will automatically download the correct Python version (TensorFlow 2.10 requires Python <= 3.10) and install all dependencies:
 
 ```bash
-python -m venv .venv
-
-# Windows
-.venv\Scripts\activate
-
-# macOS / Linux
-source .venv/bin/activate
+uv sync
 ```
 
-### 3 — Install dependencies
-
+Alternatively, using standard pip:
 ```bash
-pip install -r requirements.txt
-pip install -e .          # install the kfall package in editable mode
+python -m venv .venv
+# activate virtual environment, then:
+pip install -e .
 ```
 
 ### 4 — Set up the dataset
