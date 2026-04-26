@@ -140,7 +140,7 @@ cd kfall-analysis
 We recommend using [uv](https://github.com/astral-sh/uv) for lightning-fast setup. `uv` will automatically download the correct Python version (TensorFlow 2.10 requires Python <= 3.10) and install all dependencies:
 
 ```bash
-uv sync
+uv sync --all-extras
 ```
 
 Alternatively, using standard pip:
