@@ -157,19 +157,19 @@ See [Dataset Setup](#-dataset-setup) below.
 ### 5 — Train
 
 ```bash
-python scripts/train.py
+uv run kfall-train
 ```
 
 ### 6 — Evaluate
 
 ```bash
-python scripts/evaluate.py --split Train --split Test
+uv run kfall-evaluate --split Train --split Test
 ```
 
 ### 7 — Predict on new data
 
 ```bash
-python scripts/predict.py --input my_sensor_data.csv --output predictions.csv
+uv run kfall-predict --input my_sensor_data.csv --output predictions.csv
 ```
 
 ---
@@ -200,7 +200,7 @@ See [`data/README.md`](data/README.md) for full instructions.
 ### Full training pipeline
 
 ```bash
-python scripts/train.py \
+uv run kfall-train \
     --epochs 800 \
     --batch-size 1000 \
     --lr 0.001 \
@@ -223,15 +223,15 @@ and `outputs/models/acc_loss.csv` already exist.
 ### Evaluation only
 
 ```bash
-python scripts/evaluate.py
+uv run kfall-evaluate
 # or for a single split:
-python scripts/evaluate.py --split Test
+uv run kfall-evaluate --split Test
 ```
 
 ### Batch inference
 
 ```bash
-python scripts/predict.py \
+uv run kfall-predict \
     --input path/to/sensor.csv \
     --output predictions.csv
 ```
@@ -246,13 +246,13 @@ The input CSV must have these 9 columns (order matters):
 Run the full test suite (no dataset required — all tests use synthetic data):
 
 ```bash
-pytest tests/ -v
+uv run pytest tests/ -v
 ```
 
 With coverage report:
 
 ```bash
-pytest tests/ -v --cov=src/kfall --cov-report=term-missing
+uv run pytest tests/ -v --cov=src/kfall --cov-report=term-missing
 ```
 
 ### Test coverage
