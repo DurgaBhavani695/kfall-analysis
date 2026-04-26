@@ -1,0 +1,76 @@
+# ──────────────────────────────────────────────
+#  Python
+# ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ──────────────────────────────────────────────
+#  Virtual environments
+# ──────────────────────────────────────────────
+.venv/
+venv/
+env/
+.env
+
+# ──────────────────────────────────────────────
+#  TensorFlow / Keras artefacts
+# ──────────────────────────────────────────────
+*.h5
+*.pb
+*.tflite
+saved_model/
+
+# ──────────────────────────────────────────────
+#  Project outputs  (keep structure, ignore content)
+# ──────────────────────────────────────────────
+outputs/models/*
+outputs/results/*
+outputs/logs/*
+!outputs/models/.gitkeep
+!outputs/results/.gitkeep
+!outputs/logs/.gitkeep
+
+# ──────────────────────────────────────────────
+#  Raw & processed data  (never commit raw data)
+# ──────────────────────────────────────────────
+data/raw/
+data/processed/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# ──────────────────────────────────────────────
+#  Jupyter Notebooks checkpoints
+# ──────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ──────────────────────────────────────────────
+#  IDEs
+# ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ──────────────────────────────────────────────
+#  Coverage & test artefacts
+# ──────────────────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# ──────────────────────────────────────────────
+#  Misc
+# ──────────────────────────────────────────────
+*.log
+*.zip

@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "kfall-analysis"
+version = "1.0.0"
+description = "Fall detection & ADL classification via CRHNN + FireHawks Optimizer on the KFall dataset."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = [
+    "tensorflow==2.10.0",
+    "keras==2.10.0",
+    "numpy>=1.23,<2.0",
+    "pandas>=1.5,<3.0",
+    "openpyxl>=3.0",
+    "scikit-learn>=1.1",
+    "tqdm>=4.64",
+    "matplotlib>=3.6",
+    "seaborn>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+kfall-train    = "scripts.train:main"
+kfall-evaluate = "scripts.evaluate:main"
+kfall-predict  = "scripts.predict:main"
+
+[project.urls]
+Homepage   = "https://github.com/yourusername/kfall-analysis"
+Repository = "https://github.com/yourusername/kfall-analysis"
+Issues     = "https://github.com/yourusername/kfall-analysis/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths   = ["tests"]
+addopts     = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["src/kfall"]
+omit   = ["*/tests/*", "*/scripts/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
